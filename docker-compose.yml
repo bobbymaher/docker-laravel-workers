@@ -1,0 +1,44 @@
+
+#this is just an example, it wont work on its own
+#throughout this file and others 'your-project' is the mounted volume you would specify in the docer-compose file
+
+#laravel queue
+php-worker:
+  build: ./php-worker
+  container_name: php-worker
+  volumes:
+    - ..:/var/www/your-project
+  links:
+    - redis
+    - mysql
+
+
+
+#laravel cron
+php-cron:
+  build: ./php-cron
+  container_name: php-cron
+  volumes:
+    - ..:/var/www/your-project
+  links:
+    - redis
+    - mysql
+
+
+
+#laravel horizon
+php-horizon:
+  build: ./php-horizon
+  container_name: php-cron
+  volumes:
+    - ..:/var/www/your-project
+  links:
+    - redis
+    - mysql
+
+
+
+
+
+
+
