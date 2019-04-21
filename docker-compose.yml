@@ -29,7 +29,7 @@ php-cron:
 #laravel horizon
 php-horizon:
   build: ./php-horizon
-  container_name: php-cron
+  container_name: php-horizon
   volumes:
     - ..:/var/www/your-project
   links:
