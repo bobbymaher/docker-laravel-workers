@@ -6,7 +6,7 @@ RUN apt-get update \
     && export TERM=xterm
 
 
-COPY supervisord-old-worker.conf /etc/supervisord.conf
+COPY supervisord.conf /etc/supervisord.conf
 
 ENTRYPOINT ["/usr/bin/supervisord", "-n", "-c",  "/etc/supervisord.conf"]
 
